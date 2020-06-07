@@ -25,6 +25,9 @@ $purple-color: #845cff;
 html {
   font-size: 62.5%;
   scroll-behavior: smooth;
+  @include max_767 {
+    font-size: 37.5%;
+  }
 }
 body {
   line-height: 1.4;
@@ -114,6 +117,9 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @include max_767 {
+      flex-direction: column;
+    }
   }
   &__logo {
     cursor: pointer;
@@ -125,7 +131,13 @@ a {
     &-link {
       &:not(:last-of-type) {
         margin-right: 5.3rem;
+        @include max_767 {
+          margin-right: 3rem;
+        }
       }
+    }
+    @include max_767 {
+      margin-top: 10px;
     }
   }
   &__main {
@@ -134,6 +146,11 @@ a {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    @include max_767 {
+      width: 90%;
+      height: 70vh;
+      margin: 0 auto;
+    }
   }
   &__title {
     font-size: 4.8rem;
@@ -154,6 +171,10 @@ a {
       cursor: pointer;
     }
   }
+  @include max_767 {
+    background-position: center;
+    padding-top: 20px;
+  }
 }
 // END HEADER
 
@@ -166,6 +187,9 @@ a {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    @include max_767 {
+      flex-direction: column;
+    }
   }
   &__item {
     width: 45.5%;
@@ -191,6 +215,18 @@ a {
       padding: 6rem 6rem 10rem 6rem;
       box-shadow: -10px 10px 20px rgba(0, 0, 0, 0.15);
       border-radius: 30px;
+      @include max_767 {
+        padding: 3rem 3rem 5rem 3rem;
+        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.45);
+      }
+    }
+    @include max_767 {
+      width: 90%;
+      margin: 0 auto;
+      margin-bottom: 5rem;
+      &-icon {
+        margin: 0 auto;
+      }
     }
   }
 }
@@ -208,6 +244,9 @@ a {
     flex-wrap: wrap;
     justify-content: space-between;
     padding: 14rem 0;
+    @include max_767 {
+      padding: 7rem 0;
+    }
   }
   &__row {
     width: 100%;
@@ -215,6 +254,12 @@ a {
     justify-content: space-between;
     &:not(:last-of-type) {
       margin-bottom: 18rem;
+      @include max_767 {
+        margin-bottom: 6rem;
+      }
+    }
+    @include max_767 {
+      flex-wrap: wrap;
     }
   }
   &__item {
@@ -235,6 +280,12 @@ a {
       font-weight: 300;
       color: $light-blue;
     }
+    @include max_767 {
+      width: 45%;
+    }
+  }
+  @include max_767 {
+    background-position: center;
   }
 }
 // END SERVICES
@@ -253,15 +304,37 @@ a {
     justify-content: space-between;
     &:first-of-type {
       margin-bottom: 26rem;
+      @include max_767 {
+        margin-bottom: 8rem;
+      }
+    }
+    @include max_767 {
+      flex-wrap: wrap;
     }
   }
   &__item {
     width: 48%;
-    &.order-1 {
+    &.order-a {
+      order: 1;
+      @include max_767 {
+        order: 2;
+      }
+    }
+    &.order-b {
+      order: 2;
+      @include max_767 {
+        order: 1;
+      }
+    }
+    &.order-c {
+      order: 2;
+    }
+    &.order-d {
       order: 1;
     }
-    &.order-2 {
-      order: 2;
+    @include max_767 {
+      width: 90%;
+      margin: 10px auto;
     }
   }
   &__option {
@@ -284,6 +357,9 @@ a {
       }
     }
   }
+  @include max_767 {
+    padding: 10rem 0;
+  }
 }
 // END WHAT WE DO
 
@@ -293,8 +369,8 @@ a {
   background-image: url(../images/finances-img.png);
   background-repeat: no-repeat;
   background-position: right;
-  display: flex;
-  flex-direction: column;
+  // display: flex;
+  // flex-direction: column;
   &__item {
     width: 50%;
     color: $medium-blue;
@@ -302,6 +378,17 @@ a {
       margin-bottom: 172px;
       display: flex;
       align-items: center;
+      @include max_767 {
+        margin-bottom: 70px;
+      }
+    }
+    @include max_767 {
+      width: 90%;
+      margin: 0 auto;
+      background-color: rgba($color: #ffffff, $alpha: 0.9);
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.15);
     }
   }
   &__title {
@@ -319,6 +406,9 @@ a {
         margin-bottom: 4rem;
       }
     }
+  }
+  @include max_767 {
+    padding: 30px 0;
   }
 }
 // END FINANCES
@@ -328,10 +418,22 @@ a {
   padding: 106px 0 196px 0;
   &__group {
     display: flex;
+    @include max_767 {
+      flex-wrap: wrap;
+    }
   }
   &__item {
     width: 50%;
     color: $medium-blue;
+    @include max_767 {
+      width: 90%;
+      margin: 0 auto;
+      margin-bottom: 50px;
+      background-color: rgba($color: #ffffff, $alpha: 0.9);
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.15);
+    }
   }
   &__title {
     font-size: 3rem;
@@ -348,6 +450,10 @@ a {
         margin-bottom: 4rem;
       }
     }
+  }
+  @include max_767 {
+    padding: 50px 0 0 0;
+    background-color: #fafaff;
   }
 }
 // END SERVNAME
@@ -360,6 +466,9 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @include max_767 {
+      flex-direction: column;
+    }
   }
   &__content {
     &-title {
@@ -367,6 +476,9 @@ a {
       color: $dark-blue;
       font-weight: 400;
       margin: 44px 0 30px 0;
+      @include max_767 {
+        margin: 15px 0 15px 0;
+      }
     }
     &-text {
       font-size: 2.3rem;
@@ -393,6 +505,13 @@ a {
         font-size: 2.3rem;
       }
     }
+    @include max_767 {
+      width: 300px;
+      margin-top: 20px;
+    }
+  }
+  @include max_767 {
+    padding: 6rem 0;
   }
 }
 // END REQUEST
@@ -414,22 +533,38 @@ i.fab {
   color: $white-color;
   &__main {
     display: flex;
+    @include max_767 {
+      flex-direction: column;
+    }
   }
   &__info {
     width: 38.86%;
     &-logo {
       cursor: pointer;
       margin-bottom: 56px;
+      @include max_767 {
+        width: 50%;
+        margin-bottom: 20px;
+      }
     }
     &-phone {
       font-size: 1.6rem;
       font-weight: 300;
       margin-bottom: 46px;
+      @include max_767 {
+        width: 50%;
+        margin-bottom: 15px;
+        padding-left: 40px;
+      }
     }
     &-mail {
       font-size: 1.6rem;
       font-weight: 400;
       margin-bottom: 46px;
+      @include max_767 {
+        width: 50%;
+        margin-bottom: 15px;
+      }
     }
     &-social {
       i {
@@ -437,6 +572,16 @@ i.fab {
           margin-right: 3rem;
         }
       }
+      @include max_767 {
+        width: 50%;
+        padding-left: 40px;
+      }
+    }
+    @include max_767 {
+      order: 2;
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
     }
   }
   &__detail {
@@ -453,8 +598,19 @@ i.fab {
         color: #dfdfe2;
         &:not(:last-of-type) {
           margin-bottom: 38px;
+          @include max_767 {
+            margin-bottom: 18px;
+          }
         }
       }
+      @include max_767 {
+        width: 33.33%;
+      }
+    }
+    @include max_767 {
+      order: 1;
+      width: 100%;
+      margin-bottom: 30px;
     }
   }
   &__bottom {
@@ -465,6 +621,10 @@ i.fab {
     & > .container {
       display: flex;
       justify-content: space-between;
+      @include max_767 {
+        flex-direction: column;
+        align-items: center;
+      }
     }
     &-nav {
       display: flex;
@@ -473,12 +633,24 @@ i.fab {
         transition: 0.25s;
         &:not(:last-of-type) {
           margin-right: 40px;
+          @include max_767 {
+            margin-right: 20px;
+          }
         }
         &:hover {
           color: #dfdfe2;
         }
       }
+      @include max_767 {
+        margin-top: 10px;
+      }
     }
+    @include max_767 {
+      margin-top: 30px;
+    }
+  }
+  @include max_767 {
+    padding: 50px 0;
   }
 }
 // END FOOTER

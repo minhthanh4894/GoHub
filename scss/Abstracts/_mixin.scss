@@ -1,10 +1,39 @@
 // PHẦN MIXINS RESPONSIVE
-$res767_1023: "screen and (min-width : 768px) and (max-width : 1023px)";
-$max_767: "screen and (max-width : 767px)";
-$max_374: "screen and (max-width : 374px)";
+// $res767_1023: "screen and (min-width : 768px) and (max-width : 1023px)";
+// $max_767: "screen and (max-width : 767px)";
+// $max_374: "screen and (max-width : 374px)";
 
-@mixin res767_1023() {
-  @media #{$res767_1023} {
+// @mixin res767_1023() {
+//   @media #{$res767_1023} {
+//     @content;
+//   }
+// }
+// @mixin max_767() {
+//   @media #{$max_767} {
+//     @content;
+//   }
+// }
+// @mixin max_374() {
+//   @media #{$max_374} {
+//     @content;
+//   }
+// }
+// // END PHẦN MIXINS RESPONSIVE
+
+// @mixin absCenter {
+//   position: absolute;
+//   top: 50%;
+//   left: 50%;
+//   transform: translate(-50%, -50%);
+// }
+
+// PHẦN MIXINS RESPONSIVE
+$res768_1023: "screen and (min-width: 768px) and (max-width: 1023px)";
+$max_767: "screen and (max-width: 767px)";
+$max_374: "screen and (max-width: 374px)";
+
+@mixin res768_1023() {
+  @media #{$res768_1023} {
     @content;
   }
 }
@@ -19,10 +48,3 @@ $max_374: "screen and (max-width : 374px)";
   }
 }
 // END PHẦN MIXINS RESPONSIVE
-
-@mixin absCenter {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
