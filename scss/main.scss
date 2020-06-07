@@ -1,0 +1,484 @@
+@import "./Abstracts/mixin";
+@import "./Base/animation";
+@import "./Base/utilities";
+
+$wrapper: 192rem;
+$container: 123.5rem; // 117rem + 4rem(padding left-right 2rem) của div container
+$poppins-font: "Poppins", sans-serif;
+$dark-blue: #212240;
+$medium-blue: #32325d;
+$light-blue: #525f7f;
+$black-color: #3e3e3e;
+$white-color: #ffffff;
+$purple-color: #845cff;
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+@media screen and (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+body {
+  line-height: 1.4;
+  font-family: $poppins-font;
+  font-weight: 400;
+  color: $light-blue;
+}
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.wrapper {
+  max-width: $wrapper;
+  margin: 0 auto;
+}
+.container {
+  max-width: $container;
+  margin: 0 auto;
+  padding-right: 2rem;
+  padding-left: 2rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 1.2rem 2rem;
+  color: $white-color;
+  font-size: 1.9rem;
+  font-weight: 400;
+  border-radius: 4px;
+  &--uppercase {
+    text-transform: uppercase;
+  }
+  &--purple {
+    background-color: $purple-color;
+    transition: 0.25s;
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: -4px 4px 10px rgba($color: $purple-color, $alpha: 0.75);
+    }
+  }
+  &--submit {
+    display: flex;
+    align-items: center;
+    color: $purple-color;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    font-weight: 700;
+    img {
+      display: inline-block;
+      margin-left: 7px;
+    }
+  }
+}
+
+// Heading re-use
+.heading {
+  font-family: $poppins-font;
+  &__title {
+    font-size: 4.4rem;
+    font-weight: 300;
+    color: $medium-blue;
+    margin-bottom: 4rem;
+  }
+  &__content {
+    font-size: 2.3rem;
+    font-weight: 300;
+    color: $light-blue;
+  }
+}
+// Heading re-use
+
+// START HEADER
+.header {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  padding-top: 52px;
+  background-image: url(../images/GoHub_bg.jpg);
+  &__top {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__logo {
+    cursor: pointer;
+  }
+  &__nav {
+    font-size: 1.9rem;
+    font-weight: 400;
+    color: $medium-blue;
+    &-link {
+      &:not(:last-of-type) {
+        margin-right: 5.3rem;
+      }
+    }
+  }
+  &__main {
+    width: 41%;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  &__title {
+    font-size: 4.8rem;
+    font-weight: 400;
+  }
+  &__content {
+    font-size: 2.3rem;
+    font-weight: 300;
+    color: $light-blue;
+    padding: 6.2rem 0 4.2rem 0;
+  }
+  &__get-start {
+    font-size: 1.9rem;
+    color: $medium-blue;
+    font-weight: 400;
+    span {
+      margin-left: 3.5rem;
+      cursor: pointer;
+    }
+  }
+}
+// END HEADER
+
+// START FEATURE
+.feature {
+  width: 100%;
+  padding: 4rem 0;
+  &__group {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  &__item {
+    width: 45.5%;
+    margin-bottom: 6rem;
+    &-title {
+      font-family: $poppins-font;
+      font-size: 3rem;
+      color: $dark-blue;
+      font-weight: 300;
+      margin: 5.5rem 0 2.8rem 0;
+    }
+    &-text {
+      font-family: $poppins-font;
+      font-size: 1.8rem;
+      color: $light-blue;
+      font-weight: 300;
+    }
+    &:first-of-type {
+      display: flex;
+      align-items: flex-end;
+    }
+    &:not(:first-of-type) {
+      padding: 6rem 6rem 10rem 6rem;
+      box-shadow: -10px 10px 20px rgba(0, 0, 0, 0.15);
+      border-radius: 30px;
+    }
+  }
+}
+// END FEATURE
+
+// START SERVICES
+.services {
+  width: 100%;
+  background-image: url(../images/services-bg.png);
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  &__group {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 14rem 0;
+  }
+  &__row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    &:not(:last-of-type) {
+      margin-bottom: 18rem;
+    }
+  }
+  &__item {
+    width: 19.838%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: $poppins-font;
+    &-title {
+      font-size: 2rem;
+      font-weight: 400;
+      color: $dark-blue;
+      margin: 4.6rem 0 1.8rem 0;
+    }
+    &-text {
+      font-size: 1.6rem;
+      font-weight: 300;
+      color: $light-blue;
+    }
+  }
+}
+// END SERVICES
+
+// START WHAT WE DO
+.whatwedo {
+  padding: 20rem 0;
+  width: 100%;
+  font-family: $poppins-font;
+  &__group {
+    width: 100%;
+  }
+  &__row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    &:first-of-type {
+      margin-bottom: 26rem;
+    }
+  }
+  &__item {
+    width: 48%;
+    &.order-1 {
+      order: 1;
+    }
+    &.order-2 {
+      order: 2;
+    }
+  }
+  &__option {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: 4rem 0;
+    &-item {
+      width: 40%;
+      h4 {
+        font-size: 3rem;
+        font-weight: 300;
+        color: $medium-blue;
+        margin-bottom: 2.2rem;
+      }
+      span {
+        font-size: 1.6rem;
+        font-weight: 300;
+        color: $light-blue;
+      }
+    }
+  }
+}
+// END WHAT WE DO
+
+// START FINANCES
+.finances {
+  width: 100%;
+  background-image: url(../images/finances-img.png);
+  background-repeat: no-repeat;
+  background-position: right;
+  display: flex;
+  flex-direction: column;
+  &__item {
+    width: 50%;
+    color: $medium-blue;
+    &:first-of-type {
+      margin-bottom: 172px;
+      display: flex;
+      align-items: center;
+    }
+  }
+  &__title {
+    font-size: 3rem;
+  }
+  &__list {
+    font-size: 2rem;
+    font-weight: 300;
+    margin-top: 6rem;
+    i {
+      margin-right: 2rem;
+    }
+    li {
+      &:not(:last-of-type) {
+        margin-bottom: 4rem;
+      }
+    }
+  }
+}
+// END FINANCES
+
+// START SERVNAME
+.servname {
+  padding: 106px 0 196px 0;
+  &__group {
+    display: flex;
+  }
+  &__item {
+    width: 50%;
+    color: $medium-blue;
+  }
+  &__title {
+    font-size: 3rem;
+  }
+  &__list {
+    font-size: 2rem;
+    font-weight: 300;
+    margin-top: 6rem;
+    i {
+      margin-right: 2rem;
+    }
+    li {
+      &:not(:last-of-type) {
+        margin-bottom: 4rem;
+      }
+    }
+  }
+}
+// END SERVNAME
+
+// START REQUEST
+.request {
+  padding: 12rem 0;
+  background-color: #fafaff;
+  &__main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__content {
+    &-title {
+      font-size: 4.8rem;
+      color: $dark-blue;
+      font-weight: 400;
+      margin: 44px 0 30px 0;
+    }
+    &-text {
+      font-size: 2.3rem;
+      color: $light-blue;
+      font-weight: 400;
+    }
+  }
+  &__form {
+    width: 563px;
+    display: flex;
+    justify-content: space-between;
+    background-color: $white-color;
+    padding: 1.5rem 1.6rem;
+    border-radius: 5px;
+    box-shadow: -4px 4px 15px rgba(0, 0, 0, 0.15);
+    input[type="email"] {
+      outline: none;
+      border: none;
+      background-color: transparent;
+      color: $light-blue;
+      font-size: 2.3rem;
+      &::placeholder {
+        color: $light-blue;
+        font-size: 2.3rem;
+      }
+    }
+  }
+}
+// END REQUEST
+
+// START FOOTER
+i.fab {
+  color: #555377;
+  font-size: 2rem;
+  transition: 0.25s;
+  cursor: pointer;
+  &:hover {
+    color: $white-color;
+  }
+}
+.footer {
+  width: 100%;
+  padding: 145px 0 97px 0;
+  background-color: $dark-blue;
+  color: $white-color;
+  &__main {
+    display: flex;
+  }
+  &__info {
+    width: 38.86%;
+    &-logo {
+      cursor: pointer;
+      margin-bottom: 56px;
+    }
+    &-phone {
+      font-size: 1.6rem;
+      font-weight: 300;
+      margin-bottom: 46px;
+    }
+    &-mail {
+      font-size: 1.6rem;
+      font-weight: 400;
+      margin-bottom: 46px;
+    }
+    &-social {
+      i {
+        &:not(:last-of-type) {
+          margin-right: 3rem;
+        }
+      }
+    }
+  }
+  &__detail {
+    width: 61.14%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.6rem;
+    font-weight: 300;
+    &-col {
+      width: 31%;
+      display: flex;
+      flex-direction: column;
+      a {
+        color: #dfdfe2;
+        &:not(:last-of-type) {
+          margin-bottom: 38px;
+        }
+      }
+    }
+  }
+  &__bottom {
+    color: #555377;
+    font-size: 1.6rem;
+    font-weight: 300;
+    margin-top: 142px;
+    & > .container {
+      display: flex;
+      justify-content: space-between;
+    }
+    &-nav {
+      display: flex;
+      a {
+        display: inline-block;
+        transition: 0.25s;
+        &:not(:last-of-type) {
+          margin-right: 40px;
+        }
+        &:hover {
+          color: #dfdfe2;
+        }
+      }
+    }
+  }
+}
+// END FOOTER
